@@ -1,0 +1,176 @@
+<%- include("partials/header")%>
+<div class="container-fluid">
+	<img src="./assets/images/jflapIcon.jpg" class="img-fluid mx-auto d-block my-2 pb-3 rounded" alt="Responsive image">
+	<hr class="rounded">
+		
+		<h1 class="text-center">JFLAP</h1>	
+		<hr class="dotted">
+	<p class="lead">
+		JFLAP is a package of graphical tools which can be used as an aid in learning the basic concepts of Formal Languages and Automata Theory.
+	</p>
+	<table class="table table-dark" border="1">
+<tbody><tr> <td> 
+<h3>Regular languages - create
+
+<br>
+<ul>
+<li> DFA
+</li><li> NFA
+</li><li> regular grammar
+</li><li> regular expression
+</li></ul>
+</h3></td><td class="text-center"> <img src="./assets/images/t1.gif" class="img-thumbnail">
+</td></tr>
+<tr>
+<td> <h3>Regular languages - conversions
+
+<ul>
+<li> NFA -&gt; DFA -&gt; Minimal DFA
+</li><li> NFA &lt;-&gt; regular expression
+</li><li> NFA &lt;-&gt; regular grammar
+
+</li></ul>
+</h3></td><td class="text-center"> <img src="./assets/images/t2.gif" class="img-thumbnail">
+</td></tr>
+
+<tr> 
+<td> <h3> Context-free languages - create
+<ul>
+<li> push-down automaton
+</li><li> context-free grammar
+</li></ul>
+</h3></td><td class="text-center"> <img src="./assets/images/t3.gif" class="img-thumbnail">
+</td></tr> 
+<tr>
+<td> <h3> Context-free languages - transform
+<ul>
+<li> PDA -&gt; CFG 
+</li><li> CFG -&gt; PDA (LL parser)
+</li><li> CFG -&gt; PDA (SLR parser)
+</li><li> CFG -&gt; CNF
+</li><li> CFG -&gt; LL parse table and parser
+</li><li> CFG -&gt; SLR parse table and parser
+</li><li> CFG -&gt; Brute force parser
+</li></ul>
+</h3></td><td class="text-center"> <img src="./assets/images/t4.gif" class="img-thumbnail">
+</td></tr>
+<tr>
+<td> <h3> Recursively Enumerable languages 
+<ul>
+<li> Turing machine (1-tape)
+</li><li> Turing machine (multi-tape)
+</li><li> Turing machine (building blocks)
+</li><li> unrestricted grammar
+</li><li> unrestricted gramamr -&gt; brute force parser
+</li></ul>
+</h3></td><td> <center><img src="./assets/images/t5.gif" class="img-thumbnail"></center>
+</td></tr>
+<tr>
+<td> <h3> L-Systems
+<ul>
+<li> Create L-systems
+</li></ul>
+</h3></td><td> <center><img src="./assets/images/t6.gif" class="img-thumbnail"></center>
+</td></tr>
+</tbody></table>
+</div>
+
+<div class="jumbotron">
+	<div class="container">
+			<p>JFLAP defines a finite automaton (FA) M as the quintuple M = (Q, Σ, δ, qs, F) where </p>
+
+  <li>  Q is a finite set of states {qi | i is a nonnegative integer} </li>
+ <li>   Σ is the finite input alphabet </li>
+<li>    δ is the transition function, δ : D → 2Q where D is a finite subset of Q × Σ*</li> 
+ <li>   qs (is member of Q) is the initial state </li>
+  <li>  F (is a subset of Q) is the set of final states</li>
+	</div>
+</div>
+<h2> EDITOR WINDOW</h2>
+<p>To start a new FA, start JFLAP and click the Finite Automaton option from the menu.</p>
+<div class="d-flex justify-content-center">
+    <img src="http://www.jflap.com/tutorial/fa/createfa/images/faSelection.png">
+</div>
+ <p>  This should bring up a new window that allows you to create and edit an FA. The editor is divided into two basic areas: the canvas, which you can construct your automaton on, and the toolbar, which holds the tools you need to construct your automaton.</p>
+<div class="d-flex justify-content-center">
+ <img src="http://www.jflap.com/tutorial/fa/createfa/images/faNewWindow.png">
+ <img src="http://www.jflap.com/tutorial/fa/createfa/images/faToolbar.png">
+</div>
+<p>As you can see, the toolbar holds four tools:</p>
+<ul>
+   <li> Attribute Editor tool <img src="http://www.jflap.com/tutorial/fa/createfa/images/arrow.gif">  : sets initial and final states</li>
+    
+   <li> State Creator tool <img src="http://www.jflap.com/tutorial/fa/createfa/images/state.gif">  : creates states </li>
+    
+   <li> Transition Creator tool <img src="http://www.jflap.com/tutorial/fa/createfa/images/transition.gif"> : creates transitions </li>
+    
+   <li> Deletor tool <img src="http://www.jflap.com/tutorial/fa/createfa/images/delete.gif"> : deletes states and tran </li>
+</ul>
+<h3>CREATING STATES</h3>
+<p>First, let's create several states. To do so we need to activate that State Creator tool by clicking the <img src="http://www.jflap.com/tutorial/fa/createfa/images/state.gif"> button on the toolbar. Next, click on the canvas in different locations to create states. We are not very sure how many states we will need, so we created four states. Your editor window should look something like this:</p>
+<div class="text-center">
+    <img src="http://www.jflap.com/tutorial/fa/createfa/images/faStatesCreated.png">
+</div>
+<h4>Defining Initial and Final States</h4>
+<p>Arbitrarily, we decide that q0 will be our initial state. To define it to be our initial state, first select the Attribute Editor tool 
+	on the toolbar. Now that we are in Attribute Editor mode, right-click on q0. This should give us a pop-up menu that looks like this:</p>
+<div class="text-center">
+	<img src="http://www.jflap.com/tutorial/fa/createfa/images/arrow.gif">	
+</div>
+<div>
+	
+<p><img src="http://www.jflap.com/tutorial/fa/createfa/images/faStateMenuInitial.png">The state menu</p>
+
+</div>
+<p>From the pop-up menu, select the checkbox Initial. A white arrowhead appreas to the left of q0 to indicate that it is the inital state.</p>
+<div>
+<p><img src="http://www.jflap.com/tutorial/fa/createfa/images/faInitialState.png"> 
+    q0 defined as initial state</p>
+</div>
+<p>Next, let's create a final state. Arbitrarily, we select q1 as our final state. To define it as the final state, right-click on the state and click the checkbox Final. It will have a double outline, indicating that it is the final state.</p>
+<div>
+    <p><img src="http://www.jflap.com/tutorial/fa/createfa/images/faFinalState.png">q1 defined as final state</p>
+</div>
+<p>Now that we have defined initial and final states, let's move on to creating transtitions.</p>
+<h5>Creating Transitions</h5>
+<p>We know strings in our language can start with a's, so, the initial state must have an outgoing transition on a. We also know that it can start with any number of a's, which means that the FA should be in the same state after processing input of any number of a's. Thus, the outgoing transition on a from q0 loops back to itself.
+
+    To create such a transition, first select the Transition Creator tool  from the toolbar. Next, click on q0 on the canvas. A text box should appear over the state.</p>
+<div>
+    <p><img src="http://www.jflap.com/tutorial/fa/createfa/images/faTransition1a.png">Creating a transition</p>
+</div>
+<p>Note that λ, reprsenting the empty string, is initially filled in for you. If you prefer ε representing the empty string, select Preferences : Preferences in the main menu to change the symbol representing the empty string.</p>
+<p>Type "a" in the text box and press Enter. If the text box isn't selected, press Tab to select it, then enter "a". When you are done, it should look like this:</p>
+<div><img src="http://www.jflap.com/tutorial/fa/createfa/images/faTransition1b.png"></div>
+<p>Lastly, we know that only strings that end with an odd number of b's should be accepted. Thus, we know that q1 has an outgoing transition on b, that it cannot loop back to q1. There are two options for the transtion: it can either go to the initial state q0, or to a brand new state, say, q2.
+
+   If the transition on b was to the initial state q0, strings would not have to be of the form ambn; strings such as ababab would also be accepted. Thus, the transition cannot be to q0, and it must be to q2.
+    
+    Create a transition on b from q1 to q2. As the FA should accept strings that end with an odd number of b's, create another transition on b from q2 to q1. Your FA is now a full, working FA! It should look something like this:
+    
+    </p>
+    <div class="text-center">
+        <img src="http://www.jflap.com/tutorial/fa/createfa/images/faFinished.png">
+
+    </div>
+    <h6>Running the FA on Multiple Strings</h6>
+    <p>Now that you've completed your FA, you might want to test it to see if it really accepts strings from the language. To do so, select Input : Multiple Run from the menu bar.</p>
+<div>
+	<center>
+    <img src="http://www.jflap.com/tutorial/fa/createfa/images/faMultipleRun.png">
+			</center>
+		<p>A new tab will appear displaying the automaton on the left pane, and an input table on the right:</p>
+	<div class="text-center">
+		<img src="http://www.jflap.com/tutorial/fa/createfa/images/faMultipleRunTab.png">		
+	</div>
+
+<p>To enter the input strings, click on the first row in the Input column and type in the string. Press Enter to continue to the next input string. When you are done, click Run Inputs to test your FA on all the input strings. The results, Accept or Reject are displayed in the Result column. You can also load the inputs from file delimited by white space. Simply click on Load Inputs and load the file to add additional input strings into multi-run pane.</p>
+	<div class="text-center">
+		<img src="http://www.jflap.com/tutorial/fa/createfa/images/faMultipleRan.png"></div>
+<p>Clicking Clear deletes all the input strings, while Enter Lambda enters the empty string at the cursor. View Trace brings up a separate window that shows the trace of the slected input. To return to the Editor window, select File : Dismiss Tab from the menu bar.</p>
+</div>
+
+
+
+
+<%- include("partials/footer")%>

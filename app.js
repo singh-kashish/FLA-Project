@@ -21,6 +21,9 @@ app.get("/algorithm",function(req,res){
 app.get("/convertor",function(req,res){
 	res.render("../views/convertor/index");
 })
+app.get("/jflap",function(req,res){
+	res.render("jflap");
+})
 
 
 
