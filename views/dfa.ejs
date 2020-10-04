@@ -1,3 +1,32 @@
 <%- include("partials/header") %>
+<div class="container-fluid">
+	<h1 class="display-4 text-center py-3">
+		Deterministic Finite Automata (DFA) 
+	</h1>
+	<p style="font-family: 'Raleway', sans-serif;font-weight:500;">
+		In a DFA, for a particular input character, the machine goes to one state only. A transition function is defined on every state for every input symbol. Also in DFA null (or ε) move is not allowed, i.e., DFA cannot change state without any input character. 
+	</p>
+	<p>
+		For example, below DFA with Σ = {0, 1} accepts all strings ending with 0. 
+	</p>
+	<img src="./assets/images/dfa.jpg" class="img-fluid mx-auto d-block my-2 pb-3 rounded" alt="Responsive image">
+	
+		<div class="jumbotron jumbotron-fluid py-4">
+  			<div class="container">
+				<h1 class="display-5">
+					DFA consists of 5 tuples {Q, Σ, q, F, δ} :-
+				</h1>
+	  			<p class="lead">Q : set of all states.</p>
+				<p class="lead">Σ : set of input symbols. ( Symbols which machine takes as input )</p>
+			  	<p class="lead">q : Initial state. ( Starting state of a machine )</p>
+	  			<p class="lead">F : set of Final States.</p>
+				<p class="lead">δ : Transition Function, defined as δ : Q X Σ --> Q.</p>
+		 
 
+
+
+
+
+	</div>
+</div>
 <%- include("partials/footer") %>

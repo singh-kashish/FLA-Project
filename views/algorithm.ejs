@@ -1,3 +1,123 @@
 <%- include("partials/header") %>
+<h1 class="text-center pb-3 mb-3">
+	Conversion from NFA to DFA
+</h1>
+<p style="font-family: 'Raleway', sans-serif;font-weight:500;">
+	In this section, we will discuss the method of converting NFA to its equivalent DFA. In NFA, when a specific input is given to the current state, the machine goes to multiple states. It can have zero, one or more than one move on a given input symbol. On the other hand, in DFA, when a specific input is given to the current state, the machine goes to only one state. DFA has only one move on a given input symbol.
+</p>
+<p style="font-family: 'Raleway', sans-serif;font-weight:500;">
+	Let, M = (Q, ∑, δ, q0, F) is an NFA which accepts the language L(M). There should be equivalent DFA denoted by M' = (Q', ∑', q0', δ', F') such that L(M) = L(M').
+</p>
+<h3>
+	Steps for converting NFA to DFA:
+</h3>
+<div class="jumbotron jumbotron-fluid py-4">
+	<div class="container container-fluid">
+			<ol>
+	<li class="lead">Initially Q' = ϕ</li>
+	<li class="lead">Add q0 of NFA to Q'. Then find the transitions from this start state.</li>
+				<li class="lead">In Q', find the possible set of states for each input symbol. If this set of states is not in Q', then add it to Q'.</li>
+	<li class="lead">In DFA, the final state will be all the states which contain F(final states of NFA)</li>
+</ol>		
+	</div>
+</div>
+<hr class="rounded">
+<h3>
+	Example 1:
+</h3>
+<img src="./assets/images/algo.png" class="img-fluid mx-auto d-block my-2 py-2 rounded" alt="Responsive image">
+<p><strong>Solution:</strong> For the given transition diagram we will first construct the transition table.</p>
+<table class="table table-dark">
+<thead>
+	<tr>
+	<th>State</th>
+	<th>0</th>
+	<th>1</th>
+	</tr></thead>
+	<tbody>
+	<tr>
+	<td>→q0</td>
+	<td>q0</td>
+	<td>q1</td>
+</tr>
+<tr>
+	<td>q1</td>
+	<td>{q1, q2}</td>
+	<td>q1</td>
+</tr>
+<tr>
+	<td>*q2</td>
+	<td>q2</td>
+	<td>{q1, q2}</td>
+</tr>
+</tbody></table>
+<p>Now we will obtain δ' transition for state q0.</p>
+<div class="jumbotron py-3">
+		<li class="lead">δ'([q0], 0) = [q0]  </li>
+	<li class="lead">δ'([q0], 1) = [q1]  </li>
+</div>
 
+<p>The δ' transition for state q1 is obtained as:</p>
+<div class="jumbotron py-3">
+		<li class="lead">δ'([q1], 0) = [q1, q2]       (new state generated)   </li>
+	<li class="lead">δ'([q1], 1) = [q1]  </li>
+</div>
+<p>The δ' transition for state q2 is obtained as:
+</p>
+<div class="jumbotron py-3">
+		<li class="lead">δ'([q2], 0) = [q2]     </li>
+	<li class="lead">δ'([q2], 1) = [q1, q2]  </li>
+</div>
+<p>Now we will obtain δ' transition on [q1, q2].</p>
+<div class="jumbotron py-3">
+		<li class="lead">δ'([q1, q2], 0) = δ(q1, 0) ∪ δ(q2, 0)  </li>
+				<p class="lead" style="padding-left:143px;">={q1, q2} ∪ {q2}  
+	</p>
+	<p class="lead" style="padding-left:143px;">= [q1, q2] </p>
+	
+	<li class="lead">δ'([q1, q2], 1) = δ(q1, 1) ∪ δ(q2, 1)  </li>
+	<p class="lead" style="padding-left:143px;">= {q1} ∪ {q1, q2}  </p>
+	<p class="lead" style="padding-left:143px;"> = {q1, q2}  </p>
+	<p class="lead" style="padding-left:143px;">= [q1, q2] </p>
+	
+</div>
+<p>
+	The state [q1, q2] is the final state as well because it contains a final state q2. The transition table for the constructed DFA will be:
+</p>
+<table class="table table-dark">
+<thead><tr>
+	<th>State</th>
+	<th>0</th>
+	<th>1</th>
+	</tr></thead>
+<tbody>
+	<tr>
+	<td>→[q0]</td>
+	<td>[q0]</td>
+	<td>[q1]</td>
+</tr>
+<tr>
+	<td>[q1]</td>
+	<td>[q1, q2]</td>
+	<td>[q1]</td>
+</tr>
+<tr>
+	<td>*[q2]</td>
+	<td>[q2]</td>
+	<td>[q1, q2]</td>
+</tr>
+<tr>
+	<td>*[q1, q2]</td>
+	<td>[q1, q2]</td>
+	<td>[q1, q2]</td>
+</tr>
+</tbody>
+</table>
+<h4>
+	The Transition diagram will be:
+</h4>
+<img src="./assets/images/exam.png" class="img-fluid mx-auto d-block my-2 py-2 rounded" alt="Responsive image">
+<p class="lead">
+	The state q2 can be eliminated because q2 is an unreachable state.
+</p>
 <%- include("partials/footer") %>

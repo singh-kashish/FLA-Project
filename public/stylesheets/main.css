@@ -1,3 +1,17 @@
 body { 
     padding-top: 65px; 
+	
+	margin-left: 65px;
+	margin-right:70px;
+	font-family: 'Roboto', sans-serif;
+}
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+.card{
+	position: absolute;
+    width: 100%;
+    left: 0;
+	right:0;
 }

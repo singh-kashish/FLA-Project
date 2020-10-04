@@ -39,7 +39,7 @@
     <![endif]-->
 </head>
 
-<body style="padding-top:60px">
+<body style="padding-top:60px;padding-left:30px;padding-right:25px;">
  <nav id="mainNavbar" class="navbar navbar-dark bg-dark navbar-expand-md py-0 fixed-top">
         <a href="/" class="navbar-brand">FLA</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
@@ -94,7 +94,7 @@
                 <input type="text" class="form-control" id="finalStatesInput">
             </div>
         </form>
-        <div class="form-inline" id="nfa-transitions">
+        <div class="form-inline d-block" id="nfa-transitions">
             <div class="production-row">
                 &delta;(&nbsp;<input type="text" class="form-control current-state-input">&nbsp;,&nbsp;<input
                     type="text"
@@ -108,15 +108,15 @@
     </form>
     <div class="clearfix"></div>
 
-    <div class="col-xs-6 new-production">
-        <button id="new-transition" type="button" class="btn btn-default btn-lg btn-block"
+    <div class="col-sm-6 new-production">
+        <button id="new-transition" type="button" class="btn btn-primary btn-lg btn-block"
                 title="Create a new transition">
             <span class="glyphicon glyphicon-plus"></span> &nbsp;Click here or press &quot;Enter&quot; for a new
             transition
         </button>
     </div>
 
-    <div class="clearfix"></div>
+    <div class="clearfix d-block"></div>
     <h1 id="verify-update-debug">Verify</h1>
 
     <p>This is the NFA you have input above:</p>
@@ -126,7 +126,7 @@
     <div class="clearfix"></div>
     <h1>Equivalent DFA</h1>
     <div class="row">
-        <div class="col-lg">
+        <div class="col-lg-12">
             <span id="current-dfa-status"></span>
             <div id="current-dfa"></div>
         </div>
@@ -140,12 +140,28 @@
     <div class="clearfix"></div>
     <h1>About</h1>
     <ul>
+		<li>Functional/visual changes by Kashish Singh</li>
         <li>Created by Jordano Baer and John Cameron. University of South Florida, 2019.</li>
         <li>DFA Visualization is made possible with the <a href="https://github.com/mdaines/viz.js" target="_blank">Viz.js</a>
             library.
         </li>
     </ul>
 </div>
+	 <div style="position: absolute;
+    width: 100%;
+    left: 0;
+	right:0;"class="card bg-primary text-white text-center p-3">
+    <blockquote class="blockquote mb-0">
+      <h3>
+		  FLA Project by :
+		</h3>
+      <footer class="blockquote-footer text-white">
+        <small>
+         <cite title="Source Title">Kashish , Akash , Aakriti, Rohit, Ashwin</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </div> 
 </body>
 
 </html>
